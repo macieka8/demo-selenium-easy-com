@@ -8,7 +8,7 @@ test.describe('Bootstrap Progress bar', () => {
 
   const procentageToReach = 50;
   test(`progress bar reached ${procentageToReach}%`, async ({ page }) => {
-    const downloadButton = await page.getByRole('button', { name: 'Download size: 20480kb' });
+    const downloadButton = await page.locator('#cricle-btn'); // getByRole('button', { name: 'Download size: 20480kb' }); doesn't work on firefox
     const procentageText = await page.locator('.percenttext');
 
     await downloadButton.click();
